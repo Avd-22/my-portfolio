@@ -9,12 +9,7 @@ import {
   type MouseEvent,
 } from 'react';
 import { flushSync } from 'react-dom';
-import {
-  REDUCED_MOTION_QUERY,
-  SYSTEM_THEME_QUERY,
-  THEME_COOKIE,
-  type Theme,
-} from '../constants/theme';
+import { SYSTEM_THEME_QUERY, THEME_COOKIE, type Theme } from '../constants/theme';
 
 type ThemeContextValue = {
   theme: Theme;
@@ -65,13 +60,9 @@ export function ThemeProvider({
       preference.current = nextTheme;
       document.cookie = `${THEME_COOKIE}=${nextTheme}; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
       const update = () => flushSync(() => applyTheme(nextTheme));
-      if (window.matchMedia(REDUCED_MOTION_QUERY).matches) {
-        update();
-        return;
-      }
       if (!document.startViewTransition) {
         const site = document.querySelector<HTMLElement>('.site');
-        if (!site || typeof site.animate !== 'function') {
+        if (!site) {
           update();
           return;
         }
@@ -112,6 +103,23 @@ export function ThemeProvider({
         document.body.append(overlay);
         transitioning.current = true;
         update();
+        if (typeof overlay.animate !== 'function') {
+          let started: number | undefined;
+          const radius = parseFloat(root.style.getPropertyValue('--theme-radius'));
+          const reveal = (time: number) => {
+            started ??= time;
+            const progress = Math.min((time - started) / 650, 1);
+            const eased = 1 - (1 - progress) ** 3;
+            overlay.style.setProperty('--reveal-radius', `${radius * eased}px`);
+            if (progress < 1) window.requestAnimationFrame(reveal);
+            else {
+              overlay.remove();
+              transitioning.current = false;
+            }
+          };
+          window.requestAnimationFrame(reveal);
+          return;
+        }
         const animation = overlay.animate(
           [
             { '--reveal-radius': '0px' },

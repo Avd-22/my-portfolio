@@ -51,7 +51,12 @@ it('follows system changes until the user explicitly selects a theme', () => {
   act(() => change());
   expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeVisible();
 });
-it('uses an immediate switch when an existing site cannot animate', () => {
+it('animates a circular reveal even without native transitions or Web Animations', () => {
+  const frames: FrameRequestCallback[] = [];
+  vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+    frames.push(callback);
+    return frames.length;
+  });
   render(
     <ThemeProvider initialTheme="light">
       <div className="site">
@@ -61,7 +66,19 @@ it('uses an immediate switch when an existing site cannot animate', () => {
   );
   fireEvent.click(screen.getByRole('button'));
   expect(document.documentElement.dataset.theme).toBe('dark');
-  expect(document.querySelector('.theme-snapshot')).toBeNull();
+  const overlay = document.querySelector<HTMLElement>('.theme-snapshot')!;
+  frames.shift()?.(0);
+  frames.shift()?.(325);
+  expect(parseFloat(overlay.style.getPropertyValue('--reveal-radius'))).toBeGreaterThan(
+    0,
+  );
+  expect(overlay.isConnected).toBe(true);
+  frames.shift()?.(650);
+  expect(overlay.isConnected).toBe(false);
+  fireEvent.click(screen.getByRole('button'));
+  frames.shift()?.(0);
+  frames.shift()?.(650);
+  expect(document.documentElement.dataset.theme).toBe('light');
 });
 it('sets Secure cookie attributes on HTTPS', () => {
   const cookie = vi.spyOn(document, 'cookie', 'set');

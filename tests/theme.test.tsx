@@ -34,8 +34,11 @@ describe('theme', () => {
     );
     expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeVisible();
   });
-  it('skips view transitions for reduced motion', async () => {
-    const transition = vi.fn();
+  it('animates an explicitly requested theme switch even with reduced system motion', async () => {
+    const transition = vi.fn((update: () => void) => {
+      update();
+      return { finished: Promise.resolve() };
+    });
     Object.defineProperty(document, 'startViewTransition', {
       configurable: true,
       value: transition,
@@ -54,7 +57,7 @@ describe('theme', () => {
       </ThemeProvider>,
     );
     await userEvent.click(screen.getByRole('button', { name: 'Switch to light mode' }));
-    expect(transition).not.toHaveBeenCalled();
+    expect(transition).toHaveBeenCalledOnce();
     expect(document.documentElement.dataset.theme).toBe('light');
     Object.defineProperty(document, 'startViewTransition', { value: undefined });
   });

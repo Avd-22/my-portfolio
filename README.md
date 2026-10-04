@@ -38,7 +38,7 @@ Next.js is the application framework. Vite powers the Vitest test setup; Next.js
 
 ## Behavior and accessibility
 
-Theme preference is stored in a validated SameSite cookie, secure over HTTPS. The server renders saved themes without injected scripts or raw HTML. New visitors follow their system theme after hydration. Context API owns state. Supported browsers reveal the new theme in a circle from the toggle; other browsers use a gentle color transition. Reduced-motion preferences disable motion.
+Theme preference is stored in a validated SameSite cookie, secure over HTTPS. The server renders saved themes without injected scripts or raw HTML. New visitors follow their system theme after hydration. Context API owns state. Supported browsers reveal the new theme in a circle from the toggle; other browsers use a gentle color transition. Reduced-motion preferences disable ambient motion; explicitly requested theme switches retain the circular reveal.
 
 Section links scroll smoothly, update the URL, and focus their destination after scrolling. Navigation supports keyboard operation, Escape closes the mobile menu, the active section is marked with `aria-current`, and a skip link leads to the main content. Content remains visible without JavaScript.
 
