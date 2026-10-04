@@ -1,0 +1,49 @@
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 30px 0;
+  gap: 30px;
+}
+.metrics > div {
+  border-right: 1px solid var(--border);
+}
+.metrics > div:last-child {
+  border: 0;
+}
+.metrics strong {
+  font:
+    25px Manrope,
+    sans-serif;
+  letter-spacing: -1px;
+}
+.metrics strong span {
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.metrics small {
+  display: block;
+  font:
+    10px 'IBM Plex Mono',
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.metricnote {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.metricnote > span {
+  font-size: 32px;
+  color: var(--accent);
+}
+.metricnote p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}

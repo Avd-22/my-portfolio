@@ -1,0 +1,67 @@
+/* Semantic color constants. Components consume tokens, never raw colors. */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d1219;
+  --panel: #131b24;
+  --text: #ecf0f3;
+  --muted: #8d99a8;
+  --accent: #a8d9c5;
+  --border: #ffffff12;
+  --selection: #9ad3c2;
+  --grid: #ffffff02;
+  --status-halo: #a8d9c511;
+  --hero-glow: #5eaa9220;
+  --accent-border: #a8d9c529;
+  --shadow: #0003;
+  --window-red: #8a7278;
+  --window-yellow: #b29e76;
+  --window-green: #7d9e8a;
+  --code-muted: #586574;
+  --syntax-keyword: #bca6df;
+  --syntax-function: #d4b58e;
+  --shadow-soft: #0002;
+  --orbit: #a8d9c513;
+  --tag-bg: #879e9310;
+  --accent-hover: #a8d9c550;
+  --preview-glow: #427e7030;
+  --rail: #81989330;
+  --bubble: #879e9314;
+  --bubble-reply: #a8d9c51c;
+  --contact-glow: #a8d9c50d;
+  --contact-border: #a8d9c540;
+  --status-halo-fade: #a8d9c508;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f0f4f2;
+  --panel: #ffffff;
+  --text: #182a2b;
+  --muted: #55666a;
+  --accent: #2c7560;
+  --border: #193d2c20;
+  --selection: #a9d6c5;
+  --grid: #193d2c05;
+  --status-halo: #2c756012;
+  --hero-glow: #2c756018;
+  --accent-border: #2c756030;
+  --shadow: #193d2c12;
+  --window-red: #8a7278;
+  --window-yellow: #b29e76;
+  --window-green: #7d9e8a;
+  --code-muted: #697c7b;
+  --syntax-keyword: #7450a1;
+  --syntax-function: #88652b;
+  --shadow-soft: #193d2c0d;
+  --orbit: #2c756018;
+  --tag-bg: #2c756009;
+  --accent-hover: #2c756060;
+  --preview-glow: #2c75601a;
+  --rail: #2c756030;
+  --bubble: #2c756010;
+  --bubble-reply: #2c75601c;
+  --contact-glow: #2c756010;
+  --contact-border: #2c756050;
+  --status-halo-fade: #2c756005;
+}

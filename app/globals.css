@@ -1,0 +1,16 @@
+@import '../constants/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@import '../styles/base.css';
+@import '../styles/layout.css';
+@import '../styles/hero.css';
+@import '../styles/metrics.css';
+@import '../styles/sections.css';
+@import '../styles/projects.css';
+@import '../styles/skills.css';
+@import '../styles/contact.css';
+@import '../styles/footer.css';
+@import '../styles/motion.css';
+@import '../styles/responsive.css';
+
+@import '../styles/header.css';

@@ -1,0 +1,205 @@
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.motion-ready .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s,
+    transform 0.7s;
+}
+.motion-ready .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+a:hover {
+  color: var(--accent);
+}
+.primary:hover {
+  color: var(--bg);
+  filter: brightness(1.1);
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 6px var(--status-halo-fade);
+  }
+}
+@keyframes barIn {
+  from {
+    transform: scaleY(0.2);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  animation: theme-reveal 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--theme-x, 50%) var(--theme-y, 0));
+  }
+  to {
+    clip-path: circle(
+      var(--theme-radius, 150vmax) at var(--theme-x, 50%) var(--theme-y, 0)
+    );
+  }
+}
+html:not([data-theme-transition]) {
+  body,
+  .site,
+  .editor,
+  .project,
+  .skill,
+  .floatingtag,
+  .button,
+  .contact,
+  nav {
+    transition:
+      transform 250ms ease,
+      translate 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 650ms ease,
+      background-color 250ms ease,
+      color 250ms ease,
+      border-color 250ms ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+::view-transition-group(root) {
+  animation-duration: 650ms;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+html[data-theme-transition='active'] * {
+  transition: none !important;
+}
+.herocopy > * {
+  animation: content-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.herocopy > :nth-child(2) {
+  animation-delay: 80ms;
+}
+.herocopy > :nth-child(3) {
+  animation-delay: 160ms;
+}
+.herocopy > :nth-child(4) {
+  animation-delay: 240ms;
+}
+.herocopy > :nth-child(5) {
+  animation-delay: 320ms;
+}
+@keyframes content-enter {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.motion-ready .reveal .project,
+.motion-ready .reveal .skill,
+.motion-ready .reveal .experience article {
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity 650ms ease,
+    translate 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 250ms ease,
+    border-color 250ms ease;
+}
+.motion-ready .reveal.visible .project,
+.motion-ready .reveal.visible .skill,
+.motion-ready .reveal.visible .experience article {
+  opacity: 1;
+  translate: 0 0;
+}
+.reveal.visible .project:nth-child(2),
+.reveal.visible .skill:nth-child(2),
+.reveal.visible .experience article:nth-child(2) {
+  transition-delay: 90ms;
+}
+.reveal.visible .project:nth-child(3),
+.reveal.visible .skill:nth-child(3) {
+  transition-delay: 180ms;
+}
+.reveal.visible .skill:nth-child(4) {
+  transition-delay: 270ms;
+}
+.skill {
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease;
+}
+.skill:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-hover);
+}
+@media (prefers-reduced-motion: reduce) {
+  .herocopy > * {
+    animation: none;
+  }
+  .motion-ready .reveal .project,
+  .motion-ready .reveal .skill,
+  .motion-ready .reveal .experience article {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@property --reveal-radius {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+.theme-snapshot {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--bg);
+  mask-image: radial-gradient(
+    circle at var(--theme-x) var(--theme-y),
+    transparent var(--reveal-radius),
+    black calc(var(--reveal-radius) + 1px)
+  );
+}
+.theme-snapshot *,
+.theme-snapshot *::before,
+.theme-snapshot *::after {
+  animation: none !important;
+  transition: none !important;
+}

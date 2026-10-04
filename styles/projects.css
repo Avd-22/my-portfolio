@@ -1,0 +1,250 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.project:hover {
+  border-color: var(--accent-hover);
+  transform: translateY(-3px);
+}
+.preview {
+  height: 215px;
+  flex-shrink: 0;
+  background: radial-gradient(ellipse at bottom, var(--preview-glow), transparent 90%);
+  padding: 26px 18px 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.mocktop {
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  background: var(--bg);
+  border-radius: 7px 7px 0 0;
+  padding: 9px;
+  font:
+    6px 'IBM Plex Mono',
+    monospace;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+.mocktop i {
+  width: 4px;
+  height: 4px;
+  margin-right: 3px;
+}
+.mocktop span {
+  margin-left: 14px;
+}
+.mockbody {
+  display: flex;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  height: 175px;
+}
+.mockrail {
+  width: 28px;
+  border-right: 1px solid var(--border);
+  padding: 10px 7px;
+}
+.mockrail b {
+  font-size: 11px;
+  color: var(--accent);
+}
+.mockrail i {
+  display: block;
+  height: 4px;
+  background: var(--rail);
+  margin-top: 14px;
+  border-radius: 2px;
+}
+.mockcontent {
+  padding: 14px 11px;
+  flex: 1;
+  min-width: 0;
+}
+.mockheading {
+  font-size: 8px;
+  font-weight: 600;
+}
+.mockheading small {
+  font-size: 5px;
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+.mockstats {
+  display: flex;
+  gap: 6px;
+  margin: 13px 0;
+}
+.mockstats > div {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  flex: 1;
+  padding: 6px;
+}
+.mockstats small {
+  font-size: 5px;
+  color: var(--muted);
+  display: block;
+}
+.mockstats strong {
+  font-size: 12px;
+  display: block;
+  margin: 4px 0;
+}
+.mockstats em {
+  font-style: normal;
+  font-size: 5px;
+  color: var(--accent);
+}
+.mockbars {
+  display: flex;
+  height: 53px;
+  gap: 7px;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border);
+}
+.mockbars i {
+  flex: 1;
+  background: var(--accent);
+  opacity: 0.5;
+  border-radius: 2px 2px 0 0;
+  animation: barIn 1s ease both;
+}
+.mockbars i:nth-child(2n) {
+  opacity: 0.25;
+}
+.projecttext {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.projectmeta {
+  display: flex;
+  justify-content: space-between;
+  font:
+    10px 'IBM Plex Mono',
+    monospace;
+  letter-spacing: 0.3px;
+  gap: 12px;
+  line-height: 1.6;
+  color: var(--accent);
+}
+.projectmeta > span:last-child {
+  color: var(--muted);
+}
+.projecttitle {
+  min-height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.projecttitle h3 {
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: -0.7px;
+}
+.projecttitle a {
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+.project h4 {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 16px 0 0;
+}
+.project p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 14px 0 22px;
+  flex: 1;
+}
+.previewnote {
+  display: block;
+  margin-top: 22px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.bubble {
+  font-size: 7px;
+  background: var(--bubble);
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 18px;
+  max-width: 85%;
+}
+.bubble small {
+  display: block;
+  font-size: 5px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.bubble.reply {
+  margin: 10px 0 0 auto;
+  background: var(--bubble-reply);
+}
+.messagebar {
+  margin-top: 15px;
+  border: 1px solid var(--border);
+  padding: 8px;
+  font-size: 6px;
+  color: var(--muted);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.messagebar b {
+  color: var(--accent);
+}
+.chartvisual {
+  position: relative;
+  margin-top: 15px;
+  height: 75px;
+}
+.chartgrid {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 22px,
+    var(--border) 23px 24px
+  );
+}
+.chartvisual svg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.securityrow {
+  margin-top: 17px;
+  font-size: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.securityrow em,
+.mockheading em {
+  font-style: normal;
+  color: var(--accent);
+}

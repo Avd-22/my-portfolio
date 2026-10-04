@@ -1,0 +1,71 @@
+.skillgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.skill {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 26px 20px;
+}
+.skillicon {
+  font-size: 23px;
+  color: var(--accent);
+}
+.skill h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 19px 0;
+}
+.skill .tags {
+  gap: 7px;
+}
+.skill .tags span {
+  font-size: 11px;
+}
+.education {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 23px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.education > span {
+  font-size: 26px;
+  color: var(--accent);
+}
+.education small {
+  font:
+    10px 'IBM Plex Mono',
+    monospace;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.education h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 9px 0 6px;
+}
+.education p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.education > div:last-child {
+  margin-left: auto;
+  text-align: right;
+}
+.education strong {
+  display: block;
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.education strong span {
+  font-size: 10px;
+  color: var(--muted);
+}

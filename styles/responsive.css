@@ -1,0 +1,420 @@
+@media (min-width: 1500px) {
+  .hero {
+    min-height: 700px;
+  }
+}
+@media (max-width: 1250px) {
+  main,
+  footer {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .code {
+    font-size: 10px;
+  }
+  .heroart {
+    padding-left: 0;
+  }
+  .orbit {
+    width: 380px;
+    height: 380px;
+    left: 0;
+  }
+  .orbit2 {
+    width: 300px;
+    height: 300px;
+    left: 40px;
+  }
+  .projects {
+    gap: 20px;
+  }
+  .projecttext {
+    padding: 24px;
+  }
+}
+@media (max-width: 950px) {
+  h1 {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+  .code {
+    font-size: 8px;
+    padding-left: 10px;
+  }
+  .code em {
+    padding-right: 10px;
+  }
+  .hero {
+    min-height: 560px;
+  }
+  .heroart {
+    min-width: 0;
+  }
+  .orbit {
+    width: 300px;
+    height: 300px;
+  }
+  .orbit2 {
+    width: 240px;
+    height: 240px;
+  }
+  .tagtwo {
+    left: 0;
+  }
+  .metrics {
+    gap: 15px;
+  }
+  .metrics strong {
+    font-size: 22px;
+  }
+  .metrics strong span {
+    font-size: 11px;
+  }
+  .metrics small {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project:last-child {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .project:last-child .preview {
+    height: 100%;
+    border-bottom: 0;
+  }
+  .skillgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sectionnote {
+    display: none;
+  }
+  nav {
+    gap: 18px;
+  }
+  header {
+    padding: 0 25px;
+  }
+  .hero p {
+    font-size: 13px;
+  }
+  .herosocial {
+    gap: 12px;
+  }
+  .herosocial > span {
+    padding-left: 10px;
+    font-size: 6px;
+  }
+  .section h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 680px) {
+  main,
+  footer {
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+  header {
+    height: 73px;
+    padding: 0 22px;
+  }
+  .brand {
+    font-size: 12px;
+  }
+  .brand small {
+    font-size: 7px;
+  }
+  .brandmark {
+    font-size: 27px;
+  }
+  .navtools {
+    gap: 12px;
+  }
+  .resume {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .resume span {
+    margin-left: 8px;
+  }
+  .theme {
+    font-size: 20px;
+  }
+  .menubtn {
+    display: block;
+    border: 0;
+    background: none;
+    color: var(--text);
+    font-size: 19px;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 73px;
+    left: 15px;
+    right: 15px;
+    padding: 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 55px 0 42px;
+    min-height: 0;
+  }
+  h1 {
+    font-size: clamp(36px, 9.5vw, 44px);
+    letter-spacing: -1.8px;
+    line-height: 1.16;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+  .heroart {
+    max-width: 470px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 65px 12px 65px;
+  }
+  .code {
+    font-size: 9px;
+    padding: 20px 12px;
+  }
+  .code em {
+    padding-right: 14px;
+  }
+  .tagone {
+    right: 18px;
+  }
+  .tagtwo {
+    left: 25px;
+    bottom: 35px;
+  }
+  .orbit {
+    width: 310px;
+    height: 310px;
+    left: calc(50% - 155px);
+    top: 10px;
+  }
+  .orbit2 {
+    width: 250px;
+    height: 250px;
+    left: calc(50% - 125px);
+    top: 40px;
+  }
+  .artcaption {
+    bottom: 6px;
+    right: 30px;
+    font-size: 6px;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 20px;
+    padding: 25px 0;
+  }
+  .metrics > div:nth-child(2) {
+    border: 0;
+  }
+  .metrics strong {
+    font-size: 24px;
+  }
+  .metrics small {
+    font-size: 9px;
+  }
+  .metricnote p {
+    font-size: 11px;
+  }
+  .section {
+    padding-top: 65px;
+  }
+  .section h2 {
+    font-size: 25px;
+    line-height: 1.4;
+  }
+  .sectionhead {
+    display: block;
+    margin-bottom: 26px;
+  }
+  .textlink {
+    display: inline-block;
+    margin-top: 18px;
+  }
+  .experience article {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 27px 0;
+  }
+  .timeline {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .current {
+    margin: 0;
+    font-size: 9px;
+  }
+  .timeline small {
+    font-size: 10px;
+  }
+  .job h3 {
+    font-size: 21px;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .project:last-child {
+    grid-column: auto;
+    display: block;
+  }
+  .project:last-child .preview {
+    height: 215px;
+    border-bottom: 1px solid var(--border);
+  }
+  .projecttext {
+    padding: 26px;
+  }
+  .project p {
+    min-height: 0;
+    font-size: 14px;
+  }
+  .mocktop {
+    font-size: 7px;
+  }
+  .mockcontent {
+    padding: 15px;
+  }
+  .preview {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .mockheading {
+    font-size: 10px;
+  }
+  .mockheading small {
+    font-size: 6px;
+  }
+  .mockstats strong {
+    font-size: 15px;
+  }
+  .mockstats small,
+  .mockstats em {
+    font-size: 6px;
+  }
+  .bubble {
+    font-size: 8px;
+    margin-top: 14px;
+  }
+  .bubble small {
+    font-size: 6px;
+  }
+  .skillgrid {
+    gap: 12px;
+  }
+  .skill {
+    padding: 22px 16px;
+  }
+  .skill h3 {
+    font-size: 13px;
+  }
+  .skill .tags span {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  .education {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 15px;
+  }
+  .education > span {
+    display: none;
+  }
+  .education h3 {
+    font-size: 13px;
+  }
+  .education > div:last-child {
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+  }
+  .education strong {
+    font-size: 20px;
+  }
+  .contact {
+    margin-top: 65px;
+    padding: 45px 15px;
+  }
+  .contact h2 {
+    font-size: 42px;
+  }
+  .contact .eyebrow {
+    font-size: 8px;
+  }
+  .contact p {
+    font-size: 14px;
+  }
+  .contact p br {
+    display: none;
+  }
+  .contactemail {
+    font-size: 17px;
+    gap: 12px;
+  }
+  .contactlinks {
+    flex-wrap: wrap;
+    gap: 17px;
+    font-size: 10px;
+  }
+  footer {
+    gap: 14px;
+    padding: 25px 0;
+    font-size: 8px;
+  }
+  footer p {
+    max-width: 145px;
+    line-height: 1.8;
+  }
+  footer p span {
+    margin: 0 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .motion-ready .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+.site {
+  overflow-x: clip;
+}
+
+@media (max-width: 390px) {
+  .skillgrid {
+    grid-template-columns: 1fr;
+  }
+}

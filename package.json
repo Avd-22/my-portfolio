@@ -1,0 +1,41 @@
+{
+  "name": "anuvab-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1 --port 3100",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1 --port 3100",
+    "format": "prettier --write app components hooks context constants styles tests *.ts *.mjs *.json",
+    "format:check": "prettier --check app components hooks context constants styles tests *.ts *.mjs *.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^24.19.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/coverage-v8": "^4.1.11",
+    "axe-core": "^4.13.0",
+    "jsdom": "^27.0.1",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=24.21.0 <25"
+  },
+  "type": "module"
+}

@@ -1,0 +1,39 @@
+.contact {
+  text-align: center;
+  margin-top: 100px;
+  padding: 70px 20px 65px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: radial-gradient(ellipse at top, var(--contact-glow), transparent 70%);
+}
+.contact h2 {
+  font-size: 53px;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 25px 0 20px;
+}
+.contact p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.contactemail {
+  display: inline-flex;
+  gap: 35px;
+  font:
+    23px Manrope,
+    sans-serif;
+  border-bottom: 1px solid var(--contact-border);
+  padding: 13px 0;
+  margin-top: 15px;
+  color: var(--accent);
+}
+.contactlinks {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 11px;
+  color: var(--muted);
+}

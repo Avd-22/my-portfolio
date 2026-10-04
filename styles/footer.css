@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 35px 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+footer p span {
+  margin: 0 8px;
+}
+footer > a:last-child {
+  margin-left: auto;
+}
